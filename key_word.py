@@ -3,21 +3,21 @@ import secrets
 import tweepy
 
 # Creating the authentication object
-AUTH = tweepy.OAuthHandler(secrets.consumer_key, secrets.consumer_secret)
+AUTH = tweepy.OAuthHandler(secrets.CONSUMER_KEY, secrets.CONSUMER_SECRET)
 # Setting your access token and secret
-AUTH.set_access_token(secrets.access_token, secrets.access_token_secret)
+AUTH.set_access_token(secrets.ACCESS_TOKEN, secrets.ACCESS_TOKEN_SECRET)
 # Creating the API object while passing in auth information
 API = tweepy.API(AUTH)
 
 # The search term you want to find
-query = "West Midlands"
+QUERY = "Naze Tower"
 # Language code (follows ISO 639-1 standards)
-language = "en"
+LANGUAGE = "en"
 
 # Calling the user_timeline function with our parameters
-results = API.search(q=query, lang=language)
+RESULTS = API.search(q=QUERY, lang=LANGUAGE)
 
 # foreach through all tweets pulled
-for tweet in results:
-   # printing the text stored inside the tweet object
-   print tweet.user.screen_name,"Tweeted:",tweet.text
+for tweet in RESULTS:
+    # printing the text stored inside the tweet object
+    print tweet.user.screen_name, "Tweeted:", tweet.text

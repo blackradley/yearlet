@@ -1,17 +1,30 @@
-""" Just a test """
+""" Sentiment analysis test """
+from __future__ import unicode_literals
+
 import secrets
+
 import tweepy
+from textblob import TextBlob
 
 # Creating the authentication object
-AUTH = tweepy.OAuthHandler(secrets.consumer_key, secrets.consumer_secret)
+AUTH = tweepy.OAuthHandler(secrets.CONSUMER_KEY, secrets.CONSUMER_SECRET)
 # Setting your access token and secret
-AUTH.set_access_token(secrets.access_token, secrets.access_token_secret)
+AUTH.set_access_token(secrets.ACCESS_TOKEN, secrets.ACCESS_TOKEN_SECRET)
 # Creating the API object while passing in auth information
 API = tweepy.API(AUTH)
 
-# Using the API object to get tweets from your timeline, and storing it in a variable called public_tweets
-PUBLIC_TWEETS = API.home_timeline()
+# The search term you want to find
+QUERY = "Tendring"
+# Language code (follows ISO 639-1 standards)
+LANGUAGE = "en"
+
+# Calling the user_timeline function with our parameters
+RESULTS = API.search(q=QUERY, lang=LANGUAGE)
+
 # foreach through all tweets pulled
-for tweet in PUBLIC_TWEETS:
+print "Here we go"
+for tweet in RESULTS:
     # printing the text stored inside the tweet object
-    print tweet.text
+    print tweet.text.encode("utf-8")
+    analysis = TextBlob(tweet.text)
+    print analysis.sentiment.polarity
