@@ -1,11 +1,9 @@
 """ Sentiment analysis test """
-from __future__ import unicode_literals
-from builtins import dict, str
-
+from __future__ import unicode_literals # All strings are unicode
+#from builtins import dict, str
 import secrets
-
 import tweepy
-from textblob import TextBlob
+import textblob
 
 # Creating the authentication object
 AUTH = tweepy.OAuthHandler(secrets.CONSUMER_KEY, secrets.CONSUMER_SECRET)
@@ -27,5 +25,5 @@ print "Here we go"
 for tweet in RESULTS:
     # printing the text stored inside the tweet object
     print tweet.text#.encode("utf-8")
-    analysis = TextBlob(tweet.text)
+    analysis = textblob.TextBlob(tweet.text)
     print analysis.sentiment.polarity
