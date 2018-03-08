@@ -2,6 +2,7 @@
 import vcr
 import twitter_sentiment_analysis
 
-def test
+def test_unicode_in_tweets():
+    
 
 
