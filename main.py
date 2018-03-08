@@ -1,7 +1,8 @@
 """ Sentiment analysis test """
-from __future__ import unicode_literals
 
 from package.twitter_sentiments import TwitterSentiments
 
 SENTIMENTS = TwitterSentiments()
-print SENTIMENTS.search("Tendring")
+TWEETS = SENTIMENTS.search("Tendring")
+for tweet in TWEETS:
+    print u"{0}".format(tweet.text).encode('utf-8', 'ignore')
