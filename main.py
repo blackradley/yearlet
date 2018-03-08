@@ -4,4 +4,4 @@ from __future__ import unicode_literals
 from package.twitter_sentiments import TwitterSentiments
 
 SENTIMENTS = TwitterSentiments()
-SENTIMENTS.search("Tendring")
+print SENTIMENTS.search("Tendring")

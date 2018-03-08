@@ -1,6 +1,6 @@
 """ Sentiment analysis test """
 from __future__ import unicode_literals
-
+from collections import namedtuple
 from secrets import Secrets # pylint: disable=W0403
 import tweepy
 import textblob
@@ -24,9 +24,13 @@ class TwitterSentiments(object):
         # Calling the user_timeline function with our parameters
         results = api.search(q=query, lang=self.LANGUAGE)
         # foreach through all tweets pulled
-        print "Here we go"
+        tweets = []
+        # Specify thenamedtuple.
+        tweet_polarity = namedtuple('tweet_polarity', ['text', 'polarity'])
         for tweet in results:
             # printing the text stored inside the tweet object
-            print tweet.text#.encode("utf-8")
+            text = tweet.text
             analysis = textblob.TextBlob(tweet.text)
-            print analysis.sentiment.polarity
+            polarity = analysis.sentiment.polarity
+            tweets.append(tweet_polarity(text, polarity))
+        return tweets
