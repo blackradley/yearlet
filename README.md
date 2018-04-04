@@ -23,3 +23,9 @@ Run the demo
 ```
 python main.py
 ```
+
+Run the pathetic test
+
+```
+pytest
+```

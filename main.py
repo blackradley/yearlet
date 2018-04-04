@@ -1,5 +1,4 @@
-""" Sentiment analysis test """
-
+""" Sentiment Analysis Demo """
 from package.twitter_sentiments import TwitterSentiments
 
 SENTIMENTS = TwitterSentiments()

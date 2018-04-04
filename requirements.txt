@@ -2,3 +2,4 @@ tweepy==3.6.0
 textblob==0.15.1
 pytest==3.4.2
 vcrpy==1.11.1
+future==0.16.0
