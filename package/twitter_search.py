@@ -1,11 +1,11 @@
 """ Just a test """
-import secrets
+from package.secrets import Secrets
 import tweepy
 
 # Creating the authentication object
-AUTH = tweepy.OAuthHandler(secrets.CONSUMER_KEY, secrets.CONSUMER_SECRET)
+AUTH = tweepy.OAuthHandler(Secrets.CONSUMER_KEY, Secrets.CONSUMER_SECRET)
 # Setting your access token and secret
-AUTH.set_access_token(secrets.ACCESS_TOKEN, secrets.ACCESS_TOKEN_SECRET)
+AUTH.set_access_token(Secrets.ACCESS_TOKEN, Secrets.ACCESS_TOKEN_SECRET)
 # Creating the API object while passing in auth information
 API = tweepy.API(AUTH)
 

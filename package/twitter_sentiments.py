@@ -1,7 +1,7 @@
 """ Sentiment analysis test """
 from __future__ import unicode_literals
 from collections import namedtuple
-from secrets import Secrets # pylint: disable=W0403
+from package.secrets import Secrets
 import tweepy
 import textblob
 
