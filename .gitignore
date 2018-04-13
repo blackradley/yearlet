@@ -1,6 +1,14 @@
 secrets.py
 secret.py
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
