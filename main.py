@@ -1,5 +1,5 @@
 """ Sentiment Analysis Demo """
-from package.twitter_sentiments import TwitterSentiments
+from package.secrets import Secrets
 
 SENTIMENTS = TwitterSentiments()
 TWEETS = SENTIMENTS.search("Tendring")
