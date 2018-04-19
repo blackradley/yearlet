@@ -15,7 +15,8 @@ class TwitterSentiments(object):
     def __init__(self):
         pass
 
-    def search(self, query):
+    @classmethod
+    def search(cls, query):
         '''Search the timeline and return with sentiment rating'''
         # Creating the authentication object
         auth = tweepy.OAuthHandler(Secrets.CONSUMER_KEY, Secrets.CONSUMER_SECRET)
@@ -24,7 +25,7 @@ class TwitterSentiments(object):
         # Creating the API object while passing in auth information
         api = tweepy.API(auth)
         # Calling the user_timeline function with our parameters
-        results = api.search(q=query, lang=self.LANGUAGE)
+        results = api.search(q=query, lang=cls.LANGUAGE)
         # foreach through all tweets pulled
         tweets = []
         # Specify thenamedtuple.
