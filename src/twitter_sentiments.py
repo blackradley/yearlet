@@ -3,7 +3,7 @@ from __future__ import unicode_literals # all strings are unicode
 # dict and str behave like python 3 using the future package
 from builtins import dict, str # pylint: disable=W0622,E0401
 from collections import namedtuple
-from package.secrets import Secrets
+from src.secrets import Secrets
 import tweepy
 import textblob
 

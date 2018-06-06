@@ -1,5 +1,5 @@
 """ Test twitter_sentiment """
-from package.twitter_sentiments import TwitterSentiments
+from src.twitter_sentiments import TwitterSentiments
 import vcr
 
 @vcr.use_cassette('tests/vcr_cassettes/tendring_tweets.yml')
