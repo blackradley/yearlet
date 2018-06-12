@@ -12,18 +12,16 @@ class BingSearch(object):
     LANGUAGE = "en"
     SEARCH_URL = "https://api.cognitive.microsoft.com/bing/v7.0/search"
 
-
-# only 3 calls per second and 3000 per month on the free tier
-
     def __init__(self):
         pass
 
     @classmethod
     def search(cls, query):
         """ Search Bing and return json """
+        # only 3 calls per second and 3000 per month on the free tier
         load_dotenv(find_dotenv())
         headers = {'Ocp-Apim-Subscription-Key': os.getenv("BING_SEARCH_KEY")}
         params = {"q": query}
         response = requests.get(cls.SEARCH_URL, headers=headers, params=params)
         response.raise_for_status() # raise an exception if it doesn't work
-        return response.text
+        return response.content
