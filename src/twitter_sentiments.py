@@ -14,12 +14,13 @@ class TwitterSentiments(object):
     LANGUAGE = "en"
 
     def __init__(self):
-        ''' find .env automagically by walking up directories until it's found'''
-        load_dotenv(find_dotenv())
+        pass
 
     @classmethod
     def search(cls, query):
         '''Search the timeline and return with sentiment rating'''
+        ''' find .env automagically by walking up directories until it's found'''
+        load_dotenv(find_dotenv())
         # Creating the authentication object
         auth = tweepy.OAuthHandler(
             os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET")
