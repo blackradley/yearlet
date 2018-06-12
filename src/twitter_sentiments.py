@@ -2,8 +2,9 @@
 from __future__ import unicode_literals # all strings are unicode
 # dict and str behave like python 3 using the future package
 from builtins import dict, str # pylint: disable=W0622,E0401
+import os
 from collections import namedtuple
-from src.secrets import Secrets
+from dotenv import find_dotenv, load_dotenv
 import tweepy
 import textblob
 
@@ -13,15 +14,20 @@ class TwitterSentiments(object):
     LANGUAGE = "en"
 
     def __init__(self):
-        pass
+        ''' find .env automagically by walking up directories until it's found'''
+        load_dotenv(find_dotenv())
 
     @classmethod
     def search(cls, query):
         '''Search the timeline and return with sentiment rating'''
         # Creating the authentication object
-        auth = tweepy.OAuthHandler(Secrets.CONSUMER_KEY, Secrets.CONSUMER_SECRET)
+        auth = tweepy.OAuthHandler(
+            os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET")
+            )
         # Setting your access token and secret
-        auth.set_access_token(Secrets.ACCESS_TOKEN, Secrets.ACCESS_TOKEN_SECRET)
+        auth.set_access_token(
+            os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET")
+            )
         # Creating the API object while passing in auth information
         api = tweepy.API(auth)
         # Calling the user_timeline function with our parameters

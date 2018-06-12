@@ -1,4 +1,5 @@
 """ Test twitter_sentiment """
+from __future__ import unicode_literals
 from src.twitter_sentiments import TwitterSentiments
 import vcr
 
