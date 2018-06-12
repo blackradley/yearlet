@@ -24,12 +24,12 @@ Run the demo
 python main.py
 ```
 
-Run the pathetic test
-
+Run the tests
 ```
 pytest
 ```
 
+Project Structure
 
 ```
 ├── LICENSE
@@ -73,6 +73,8 @@ pytest
 │   │
 │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
 │       └── visualize.py
+│
+├── src                <- Unit tests for the package.
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
 ```

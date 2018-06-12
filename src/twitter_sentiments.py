@@ -19,7 +19,6 @@ class TwitterSentiments(object):
     @classmethod
     def search(cls, query):
         '''Search the timeline and return with sentiment rating'''
-        ''' find .env automagically by walking up directories until it's found'''
         load_dotenv(find_dotenv())
         # Creating the authentication object
         auth = tweepy.OAuthHandler(
