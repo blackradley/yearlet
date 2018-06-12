@@ -8,6 +8,7 @@ secret.py
 *.user
 *.userosscache
 *.sln.docstates
+settings.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
