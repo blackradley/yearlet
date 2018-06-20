@@ -19,9 +19,13 @@ Install the supporting packages
 
     pip install -r requirements.txt
 
-Run the tests
+Run the tests (the pytests don't run in Visual Studio which is a shame)
 
     pytest
+
+When you are done deactivate the virtual environment with
+
+    deactivate
 
 ## Project Structure
 

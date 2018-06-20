@@ -1,8 +1,9 @@
 tweepy==3.6.0
 textblob==0.15.1
 pathlib==1.0.1
-pytest==3.4.2
+pytest==3.6.2
 python-dotenv==0.8.2
-vcrpy==1.11.1
 future==0.16.0
 click==6.7
+pylint==1.9.2
+vcrpy==1.12.0
