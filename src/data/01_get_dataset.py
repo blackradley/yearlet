@@ -11,8 +11,7 @@ def main(output_filepath):
     """ get the data """
     logger = logging.getLogger(__name__)
     logger.info('Getting raw data')
-
-
+    
 
 if __name__ == '__main__':
     LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
