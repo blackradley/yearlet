@@ -3,6 +3,7 @@
 from pathlib import Path
 import logging
 import click
+from src.bing_search import BingSearch
 from dotenv import find_dotenv, load_dotenv
 
 @click.command()
@@ -11,6 +12,14 @@ def main(output_filepath):
     """ get the data """
     logger = logging.getLogger(__name__)
     logger.info('Getting raw data')
+
+    # TODO: loop through a list of places in Tendring
+    places_in_tendring = ['Colchester', 'Clacton-on-Sea', 'Harwich', 
+    'Walton-on-the-Naze', 'Dovercourt', 'Brightlingsea', 'Wivenhoe',
+    'Frinton-on-Sea', 'Jaywick', 'Manningtree']
+    for place in places_in_tendring:
+        BingSearch.search(place)
+
     
 
 if __name__ == '__main__':

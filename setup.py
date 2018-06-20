@@ -4,7 +4,7 @@ setup(
     name='src',
     packages=find_packages(),
     version='0.0.1',
-    description='A short description of the project.',
+    description='Data mining experiments project.',
     author='Black Radley Limited',
     license='MIT',
 )
