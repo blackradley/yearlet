@@ -3,6 +3,7 @@ from __future__ import unicode_literals # all strings are unicode
 # dict and str behave like python 3 using the future package
 from builtins import dict, str # pylint: disable=W0622,E0401
 import os
+import json
 import requests
 from dotenv import find_dotenv, load_dotenv
 
@@ -24,4 +25,7 @@ class BingSearch(object):
         params = {"q": query}
         response = requests.get(cls.SEARCH_URL, headers=headers, params=params)
         response.raise_for_status() # raise an exception if it doesn't work
-        return response.content
+        parsed_json = json.loads(response.content)
+        formatted_json = json.dumps(parsed_json, indent=2, sort_keys=True)
+        return formatted_json
+
