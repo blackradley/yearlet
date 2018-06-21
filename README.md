@@ -11,6 +11,16 @@ A demonstration Python data project showing:
 
 ## How to get set up?
 
+Use a virtual environment, so...
+
+    pip install virtualenv
+    pip install virtualenvwrapper-win
+
+or if you are not on Windows
+
+    sudo apt install virtualenv
+    sudo apt install virtualenvwrapper
+
 Create a virtual enviroment for the project
 
     mkvirtualenv yearlet
