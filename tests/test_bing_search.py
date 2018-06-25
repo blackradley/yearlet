@@ -19,4 +19,3 @@ def test_method_returns_json():
         json.loads(BingSearch.search('test'))
     except ValueError:
         pytest.fail("Nope, that's not json")
-
